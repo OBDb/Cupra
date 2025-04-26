@@ -1,19 +1,51 @@
 { "commands": [
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_TP_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
+    {"id": "CUPRA_TP_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "CUPRA_TP_1",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #1 pressure"},
+    {"id": "CUPRA_TID_1", "path": "Tires", "name": "Tire #1 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    }
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_TP_FL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
+    {"id": "CUPRA_TP_FL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "CUPRA_TP_2",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #2 pressure"},
+    {"id": "CUPRA_TID_2", "path": "Tires", "name": "Tire #2 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    }
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_TP_RL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
+    {"id": "CUPRA_TP_RL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "CUPRA_TP_3",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #3 pressure"},
+    {"id": "CUPRA_TID_3", "path": "Tires", "name": "Tire #3 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    }
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_TP_RR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
+    {"id": "CUPRA_TP_RR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"},
+    {"id": "CUPRA_TP_4",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #4 pressure"},
+    {"id": "CUPRA_TID_4", "path": "Tires", "name": "Tire #4 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    }
   ]},
 { "hdr": "710", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 30,
   "signals": [
@@ -43,6 +75,22 @@
   "signals": [
     {"id": "CUPRA_HVBAT_KWH", "path": "Battery", "fmt": { "len": 32, "max": 3276, "div": 1310770, "unit": "kilowattHours" }, "name": "HV battery energy", "description": "Energy stored in the high voltage battery"}
   ]},
+{ "hdr": "713", "dbg": true, "cmd": {"22": "1800"}, "freq": 0.25,
+  "signals": [
+    {"id": "CUPRA_FL_VSS", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers" }, "name": "Front left wheel speed"}
+  ]},
+{ "hdr": "713", "dbg": true, "cmd": {"22": "1801"}, "freq": 0.25,
+  "signals": [
+    {"id": "CUPRA_FR_VSS", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers" }, "name": "Front right wheel speed"}
+  ]},
+{ "hdr": "713", "dbg": true, "cmd": {"22": "1802"}, "freq": 0.25,
+  "signals": [
+    {"id": "CUPRA_RL_VSS", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers" }, "name": "Rear left wheel speed"}
+  ]},
+{ "hdr": "713", "dbg": true, "cmd": {"22": "1803"}, "freq": 0.25,
+  "signals": [
+    {"id": "CUPRA_RR_VSS", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers" }, "name": "Rear right wheel speed"}
+  ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_TIRE_FL_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 0.05625, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
@@ -63,10 +111,6 @@
   "signals": [
     {"id": "CUPRA_STEER_ANGLE", "path": "Control", "fmt": { "len": 16, "max": 360, "min": -360, "div": 1000, "sign": true, "unit": "radians" }, "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right."}
   ]},
-{ "hdr": "714", "tmo": "96", "fcm1": true, "dbg": true, "cmd": {"22": "1014"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_AAT", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -50, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature"}
-  ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "202F"}, "freq": 30,
   "signals": [
     {"id": "CUPRA_EOT", "path": "Engine", "fmt": { "len": 8, "max": 255, "add": -58, "unit": "scalar" }, "name": "Engine oil temperature"}
@@ -86,6 +130,10 @@
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "0530"}, "freq": 5,
   "signals": [
     {"id": "CUPRA_TRIP_USE_SHORT", "path": "Trips", "fmt": {"bix": 238, "len": 18, "max": 10485, "min": -10485, "div": 1600, "sign": true, "unit": "kilowattHours" }, "name": "Trip consumption (short)"}
+  ]},
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "1014"}, "freq": 5,
+  "signals": [
+    {"id": "CUPRA_AAT", "path": "Climate", "fmt": { "len": 8, "max": 215, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2203"}, "freq": 5,
   "signals": [
@@ -215,6 +263,18 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F442"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_VPWR", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Control module voltage"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "101A"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_ODO_TCM_2", "path": "Trips", "fmt": { "len": 24, "blsb": true, "max": 16777215, "unit": "kilometers" }, "name": "Odometer (TCM #2)", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "3841"}, "freq": 5,
+  "signals": [
+    {"id": "CUPRA_ODO_TCM_1", "path": "Trips", "fmt": { "len": 32, "blsb": true, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (TCM #1)", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "3887"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_ODO_TCM_2_HD", "path": "Trips", "fmt": { "len": 32, "blsb": true, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Odometer (TCM #2 high res)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0302"}, "freq": 900,
   "signals": [
