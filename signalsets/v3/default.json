@@ -63,6 +63,10 @@
   "signals": [
     {"id": "CUPRA_STEER_ANGLE", "path": "Control", "fmt": { "len": 16, "max": 360, "min": -360, "div": 1000, "sign": true, "unit": "radians" }, "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right."}
   ]},
+{ "hdr": "714", "tmo": "96", "fcm1": true, "dbg": true, "cmd": {"22": "1014"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_AAT", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -50, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature"}
+  ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "202F"}, "freq": 30,
   "signals": [
     {"id": "CUPRA_EOT", "path": "Engine", "fmt": { "len": 8, "max": 255, "add": -58, "unit": "scalar" }, "name": "Engine oil temperature"}
@@ -132,7 +136,8 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)", "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_2",  "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)",             "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_HD", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "meters"     }, "name": "Odometer (high resolution)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "11BB"}, "freq": 30,
   "signals": [
