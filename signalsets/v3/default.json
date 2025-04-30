@@ -199,10 +199,6 @@
   "signals": [
     {"id": "CUPRA_OIL_MIN", "path": "Fluids", "fmt": { "len": 16, "max": 262, "div": 250, "unit": "centimeters" }, "name": "Oil level (min)"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "2F"}, "freq": 5,
-  "signals": [
-    {"id": "CUPRA_RANGE", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 1000, "mul": 1000, "div": 255, "nullmin": 0, "unit": "kilometers" }, "name": "Range remaining", "suggestedMetric": "fuelRange"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "028D"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_ECU_TEMP", "path": "Engine", "fmt": { "len": 16, "max": 500, "min": -500, "div": 10, "sign": true, "unit": "celsius" }, "name": "ECU temperature"}
@@ -880,6 +876,10 @@
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "5200"}, "freq": 3600,
   "signals": [
     {"id": "CUPRA_LAUNCH", "path": "Stats", "fmt": { "len": 32, "max": 1000000, "unit": "scalar" }, "name": "Launch control count", "description": "How many times you've initiated launch control on the car."}
+  ]},
+{ "hdr": "FC00", "dbg": true, "cmd": {"22": "028C"}, "freq": 0.25,
+  "signals": [
+    {"id": "CUPRA_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 250, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
   ]}
 ]
 }
