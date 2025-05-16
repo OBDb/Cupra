@@ -70,9 +70,7 @@
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_SSB_SENSOR_T", "path": "Battery", "fmt": { "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
-    {"id": "CUPRA_ODO_3",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO",          "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_2",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer (alternative)",                "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_3",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0B"}, "freq": 1,
   "signals": [
@@ -159,7 +157,7 @@
 { "hdr": "714", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
   "signals": [
     {"id": "CUPRA_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                  "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_V3",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
@@ -221,13 +219,12 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)",   "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_3_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative 2)", "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_V4",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",                 "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V3",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_2_V4", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)",             "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)",             "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_HD",   "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "meters"     }, "name": "Odometer (high resolution)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "11BB"}, "freq": 30,
@@ -320,8 +317,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
