@@ -203,7 +203,7 @@
   ]},
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "0530"}, "freq": 0.5,
   "signals": [
-    {"id": "CUPRA_TRIP_USE_SHORT", "path": "Trips", "fmt": {"bix": 238, "len": 18, "max": 131, "min": -131, "div": 1000, "sign": true, "unit": "kilowattHours" }, "name": "Trip consumption (short)"}
+    {"id": "CUPRA_TRIP_USE_SHORT", "path": "Trips", "fmt": {"bix": 238, "len": 18, "max": 131, "min": -131, "div": 1000, "sign": true, "unit": "kilowattHoursPer100Miles" }, "name": "Trip consumption (short)"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "1014"}, "freq": 5,
   "signals": [
