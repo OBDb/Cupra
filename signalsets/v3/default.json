@@ -63,6 +63,11 @@
         }}
     }
   ]},
+{ "hdr": "710", "fcm1": true, "dbg": true, "cmd": {"22": "2A61"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_SSB_TOTAL_CHARGE",    "path": "Battery", "fmt": {           "len": 32, "max": 100, "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total charge"},
+    {"id": "CUPRA_SSB_TOTAL_DISCHARGE", "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 100, "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total discharge"}
+  ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A00"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_SSB_VT", "path": "Battery", "fmt": { "len": 8, "max": 36.1, "div": 10, "add": 10.6, "unit": "volts" }, "name": "Start/stop battery target voltage"}
@@ -99,11 +104,6 @@
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A10"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_SSB_V_REST", "path": "Battery", "fmt": { "len": 8, "max": 63, "min": 9, "mul": 54, "div": 255, "add": 9, "unit": "volts" }, "name": "Start/stop battery voltage (at rest)"}
-  ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A61"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_SSB_TOTAL_CHARGE",    "path": "Battery", "fmt": {           "len": 32, "max": 100, "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total charge"},
-    {"id": "CUPRA_SSB_TOTAL_DISCHARGE", "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 100, "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total discharge"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB2"}, "freq": 86400,
   "signals": [
@@ -197,6 +197,10 @@
   "signals": [
     {"id": "CUPRA_FLI_VOL", "path": "Fuel", "fmt": {"bix": 336, "len": 16, "max": 6553.5, "div": 10, "unit": "liters" }, "name": "Fuel level (volume)"}
   ]},
+{ "hdr": "714", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_RANGE_DSP", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Range remaining (displayed)", "suggestedMetric": "electricRange"}
+  ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2613"}, "freq": 30,
   "signals": [
     {"id": "CUPRA_IAT", "path": "Climate", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "celsius" }, "name": "Interior air temperature"}
@@ -208,10 +212,6 @@
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "1014"}, "freq": 5,
   "signals": [
     {"id": "CUPRA_AAT_V2", "path": "Climate", "fmt": { "len": 8, "max": 215, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature"}
-  ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_RANGE_DSP", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Range remaining (displayed)", "suggestedMetric": "electricRange"}
   ]},
 { "hdr": "715", "rax": "77F", "fcm1": true, "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
@@ -242,7 +242,7 @@
   "signals": [
     {"id": "CUPRA_HVBAT_KWH_V2", "path": "Battery", "fmt": { "len": 16, "max": 3276.75, "div": 20, "unit": "kilowattHours" }, "name": "HV battery energy", "description": "Energy stored in the high voltage battery"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "26ED"}, "freq": 1,
+{ "hdr": "746", "fcm1": true, "dbg": true, "cmd": {"22": "26ED"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_AIR_POLUTION", "path": "Climate", "fmt": { "len": 8, "max": 12.7, "min": -12.7, "div": 10, "sign": true, "unit": "scalar" }, "name": "Air pollution level", "description": "0 means clean air."}
   ]},
@@ -259,6 +259,10 @@
   "signals": [
     {"id": "CUPRA_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_V3",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "11BB"}, "freq": 3600,
+  "signals": [
+    {"id": "CUPRA_OIL_CRIT", "path": "Fluids", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level (critical)"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "11C4"}, "freq": 30,
   "signals": [
@@ -278,7 +282,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_AC_COMP_T", "path": "Climate", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "A/C compressor torque, requested"}
+    {"id": "CUPRA_AC_COMP_T", "path": "Climate", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "A/c compressor torque, requested"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1004"}, "freq": 5,
   "signals": [
@@ -331,10 +335,6 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BA"}, "freq": 15,
   "signals": [
     {"id": "CUPRA_OIL_LEVEL", "path": "Fluids", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"}
-  ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BB"}, "freq": 3600,
-  "signals": [
-    {"id": "CUPRA_OIL_CRIT", "path": "Fluids", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level (critical)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BD"}, "freq": 15,
   "signals": [
