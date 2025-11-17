@@ -1693,17 +1693,9 @@
   "signals": [
     {"id": "CUPRA_HVBAT_V_TRAC", "path": "Battery", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "volts" }, "name": "Battery voltage, traction mode"}
   ]},
-{ "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "F817"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_HVBAT_ODO", "path": "Trips", "fmt": {"bix": 32, "len": 32, "max": 214748364, "min": -214748364, "mul": 0.1, "sign": true, "unit": "kilometers" }, "name": "Odometer, high voltage battery", "suggestedMetric": "odometer"}
-  ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "028C"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_SOC_DISP", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 20.4, "div": 46, "add": -6.4, "unit": "percent" }, "name": "State of charge, display", "suggestedMetric": "stateOfCharge"}
-  ]},
-{ "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "02BD"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_BMS_ODO", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1620"}, "freq": 1,
   "signals": [
@@ -1762,13 +1754,6 @@
     {"id": "CUPRA_HVBAT_CELL_SOC_MIN",    "path": "Battery", "fmt": {           "len": 16, "max": 100,   "div": 100, "unit": "percent" }, "name": "Battery cell soc, minimum"},
     {"id": "CUPRA_HVBAT_CELL_SOC_MIN_ID", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 65535,             "unit": "scalar"  }, "name": "Battery cell soc min, ID"}
   ]},
-{ "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E32"}, "freq": 60,
-  "signals": [
-    {"id": "CUPRA_HVBAT_CHRG_TOT_AH",  "path": "Battery", "fmt": {           "len": 32, "max": 3909373, "min": -3909373, "mul": 18204441,  "div": 10000000000, "sign": true, "unit": "ampereHours"   }, "name": "Battery charge total"},
-    {"id": "CUPRA_HVBAT_DSCH_TOT_AH",  "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 3909373, "min": -3909373, "mul": 18204441,  "div": 10000000000, "sign": true, "unit": "ampereHours"   }, "name": "Battery discharge total"},
-    {"id": "CUPRA_HVBAT_CHRG_TOT_KWH", "path": "Battery", "fmt": {"bix": 64, "len": 32, "max": 250199,  "min": -250199,  "mul": 116508398, "div": 1000000000,  "sign": true, "unit": "kilowattHours" }, "name": "Battery energy charged total"},
-    {"id": "CUPRA_HVBAT_DSCH_TOT_KWH", "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250199,  "min": -250199,  "mul": 116508398, "div": 1000000000,  "sign": true, "unit": "kilowattHours" }, "name": "Battery energy discharged total"}
-  ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E33"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_HVBAT_CELL_V_MAX",    "path": "Battery", "fmt": {           "len": 16, "max": 15.997, "mul": 2441, "div": 10000, "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
@@ -1798,10 +1783,6 @@
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3C"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_HVBAT_V_CELLS_SUM", "path": "Battery", "fmt": { "len": 32, "max": 524287.99, "min": -524288, "mul": 244140625, "div": 1000000000, "sign": true, "unit": "volts" }, "name": "Battery voltage, sum of all cells"}
-  ]},
-{ "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3D"}, "freq": 1,
-  "signals": [
-    {"id": "CUPRA_HVBAT_I_DC", "path": "Battery", "fmt": { "len": 32, "max": 42949672.950000003, "div": 100, "unit": "amps" }, "name": "Battery current, DC"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3E"}, "freq": 1,
   "signals": [
