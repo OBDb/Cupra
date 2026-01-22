@@ -95,8 +95,9 @@
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_SSB_SENSOR_T", "path": "Battery", "fmt": { "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
-    {"id": "CUPRA_ODO_3",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"}
+    {"id": "CUPRA_SSB_SENSOR_T", "path": "Battery", "fmt": {          "len": 8,  "max": 215,      "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
+    {"id": "CUPRA_ODO_3",        "path": "Trips",   "fmt": {          "len": 32, "max": 255,                              "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V2",       "path": "Trips",   "fmt": {"bix": 8, "len": 24, "max": 16777175, "min": -40, "add": -40, "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0B"}, "freq": 1,
   "signals": [
@@ -109,8 +110,9 @@
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0E"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_SSB_R",     "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 2,  "div": 10,  "unit": "milliohms" }, "name": "Start/stop battery resistance"},
-    {"id": "CUPRA_BAT_INT_R", "path": "Battery", "fmt": { "len": 8, "max": 51,  "mul": 20, "div": 100, "unit": "unknown"   }, "name": "Battery internal resistance"}
+    {"id": "CUPRA_SSB_R",       "path": "Battery", "fmt": { "len": 8, "max": 100,                "mul": 2,  "div": 10,                "unit": "milliohms" }, "name": "Start/stop battery resistance"},
+    {"id": "CUPRA_BAT_INT_R",   "path": "Battery", "fmt": { "len": 8, "max": 51,                 "mul": 20, "div": 100,               "unit": "unknown"   }, "name": "Battery internal resistance"},
+    {"id": "CUPRA_SSB_RES_INT", "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "scalar"    }, "name": "Battery internal resistance"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0F"}, "freq": 5,
   "signals": [
@@ -170,6 +172,10 @@
     {"id": "CUPRA_AUX_BAT_AGE_POW",  "path": "Battery", "fmt": {"bix": 168, "len": 8,  "max": 100,                                                                            "unit": "percent"     }, "name": "12V battery aging by power"},
     {"id": "CUPRA_AUX_BAT_CAP",      "path": "Battery", "fmt": {"bix": 176, "len": 8,  "max": 100,                                                                            "unit": "ampereHours" }, "name": "12V battery adapted capacity"}
   ]},
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1812"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096, "div": 8, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+  ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "1800"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_FL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front left wheel speed"},
@@ -190,6 +196,10 @@
     {"id": "CUPRA_RR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear right wheel speed"},
     {"id": "CUPRA_RR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1804"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_STEER_WHEEL_ANGLE_ABS", "path": "Tires", "fmt": {"bix": 80, "len": 16, "max": 14335.5625, "min": -14336, "mul": 0.4375, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+  ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1808"}, "freq": 2,
   "signals": [
     {"id": "CUPRA_HDC_ACTIVE",  "path": "Engine", "fmt": {"bix": 6, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Hill descent control"},
@@ -197,11 +207,15 @@
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_EDL_ACTIVE",       "path": "Control", "fmt": {"bix": 1,  "len": 1,  "max": 1,                                         "unit": "offon"   }, "name": "Electronic differential lock: active"},
-    {"id": "CUPRA_EDL_FR_L_BRAKE_T", "path": "Control", "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20, "mul": 0.5, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front left brake temperature"},
-    {"id": "CUPRA_EDL_FR_R_BRAKE_T", "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20, "mul": 0.5, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front right brake temperature"},
-    {"id": "CUPRA_EDL_RR_L_BRAKE_T", "path": "Control", "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20, "mul": 0.5, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear left brake temperature"},
-    {"id": "CUPRA_EDL_RR_R_BRAKE_T", "path": "Control", "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20, "mul": 0.5, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear right brake temperature"}
+    {"id": "CUPRA_EDL_ACTIVE",            "path": "Control", "fmt": {"bix": 1,  "len": 1,  "max": 1,                                                   "unit": "offon"   }, "name": "Electronic differential lock: active"},
+    {"id": "CUPRA_EDL_FR_L_BRAKE_T",      "path": "Control", "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front left brake temperature"},
+    {"id": "CUPRA_EDIFF_LOCK_FL_BRAKE_T", "path": "Tires",   "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Front left brake temperature"},
+    {"id": "CUPRA_EDL_FR_R_BRAKE_T",      "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front right brake temperature"},
+    {"id": "CUPRA_EDIFF_LOCK_FR_BRAKE_T", "path": "Tires",   "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Front right brake temperature"},
+    {"id": "CUPRA_EDL_RR_L_BRAKE_T",      "path": "Control", "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear left brake temperature"},
+    {"id": "CUPRA_EDIFF_LOCK_RL_BRAKE_T", "path": "Tires",   "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Rear left brake temperature"},
+    {"id": "CUPRA_EDL_RR_R_BRAKE_T",      "path": "Control", "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear right brake temperature"},
+    {"id": "CUPRA_EDIFF_LOCK_RR_BRAKE_T", "path": "Tires",   "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Rear right brake temperature"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180E"}, "freq": 2,
   "signals": [
@@ -274,11 +288,13 @@
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_RANGE_V2", "path": "Trips", "fmt": { "len": 16, "max": 255, "unit": "kilometers" }, "name": "Range remaining", "suggestedMetric": "fuelRange"}
+    {"id": "CUPRA_RANGE_V2", "path": "Trips", "fmt": { "len": 16, "max": 255,   "unit": "kilometers" }, "name": "Range remaining",   "suggestedMetric": "fuelRange"},
+    {"id": "CUPRA_DTE",      "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to empty", "suggestedMetric": "fuelRange"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "229A"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_FLV", "path": "Fuel", "fmt": { "len": 16, "max": 255, "div": 8, "unit": "liters" }, "name": "Fuel remaining", "suggestedMetric": "fuelTankLevel"}
+    {"id": "CUPRA_FLV", "path": "Fuel", "fmt": { "len": 16, "max": 255,      "div": 8, "unit": "liters" }, "name": "Fuel remaining",   "suggestedMetric": "fuelTankLevel"},
+    {"id": "CUPRA_FLI", "path": "Fuel", "fmt": { "len": 16, "max": 8191.875, "div": 8, "unit": "liters" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "22B0"}, "freq": 30,
   "signals": [
@@ -470,7 +486,8 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2605"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_REFRIG_P", "path": "Engine", "fmt": { "len": 8, "max": 51, "mul": 0.2, "unit": "bars" }, "name": "Refrigerant pressure"}
+    {"id": "CUPRA_CLIMATE_REFRIG_P",     "path": "Engine",  "fmt": { "len": 8, "max": 51, "mul": 0.2,           "unit": "bars" }, "name": "Refrigerant pressure"},
+    {"id": "CUPRA_REFRIGERANT_PRESSURE", "path": "Climate", "fmt": { "len": 8, "max": 51,             "div": 5, "unit": "bars" }, "name": "Refrigerant pressure"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2606"}, "freq": 1,
   "signals": [
@@ -486,7 +503,8 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2609"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_HVAC_OUTSIDE_T", "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10, "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "CUPRA_AAT",            "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "mul": 0.5,            "sign": true, "unit": "celsius" }, "name": "Outside temperature"}
+    {"id": "CUPRA_AAT",            "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "mul": 0.5,            "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "CUPRA_AAT_FROMCABIN",  "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,                 "div": 2,  "sign": true, "unit": "celsius" }, "name": "Outside temperature, from cabin"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 1,
   "signals": [
@@ -494,20 +512,24 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260C"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_FR_L_DEFL_T", "path": "Engine", "fmt": { "len": 8, "max": 84.915, "mul": 0.333, "unit": "celsius" }, "name": "Front left deflector temperature"}
+    {"id": "CUPRA_CLIMATE_FR_L_DEFL_T",    "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Front left deflector temperature"},
+    {"id": "CUPRA_FRONT_LEFT_DEFLECTOR_T", "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Front left deflector temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260D"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_FR_R_DEFL_T", "path": "Engine", "fmt": { "len": 8, "max": 84.915, "mul": 0.333, "unit": "celsius" }, "name": "Front right deflector temperature"}
+    {"id": "CUPRA_CLIMATE_FR_R_DEFL_T",     "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Front right deflector temperature"},
+    {"id": "CUPRA_FRONT_RIGHT_DEFLECTOR_T", "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Front right deflector temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_LEG_DEFL_T", "path": "Engine", "fmt": { "len": 8, "max": 84.915, "mul": 0.333, "unit": "celsius" }, "name": "Leg deflector temperature"}
+    {"id": "CUPRA_CLIMATE_LEG_DEFL_T", "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Leg deflector temperature"},
+    {"id": "CUPRA_LEG_DEFLECTOR_T",    "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Leg deflector temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVAC_EVAP_T",          "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
-    {"id": "CUPRA_CLIMATE_T_AFTER_EVAP", "path": "Engine", "fmt": { "len": 8,  "max": 42.291, "min": -42.624, "mul": 0.333,            "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"}
+    {"id": "CUPRA_HVAC_EVAP_T",          "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
+    {"id": "CUPRA_CLIMATE_T_AFTER_EVAP", "path": "Engine",  "fmt": { "len": 8,  "max": 42.291, "min": -42.624, "mul": 0.333,            "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"},
+    {"id": "CUPRA_T_AFTER_EVAPORATOR",   "path": "Climate", "fmt": { "len": 8,  "max": 42.291, "min": -42.624,               "div": 3,  "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
   "signals": [
@@ -533,15 +555,18 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2622"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_FR_L_T_FLP_ACT_VALUE", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5, "unit": "percent" }, "name": "Front left temperature flap actual value"}
+    {"id": "CUPRA_CLIMATE_FR_L_T_FLP_ACT_VALUE",   "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front left temperature flap actual value"},
+    {"id": "CUPRA_FRONT_LEFT_T_FLAP_ACTUAL_VALUE", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front left temperature flap actual value"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2626"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_FR_R_T_FLP_ACT_VALUE", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5, "unit": "percent" }, "name": "Front right temperature flap actual value"}
+    {"id": "CUPRA_CLIMATE_FR_R_T_FLP_ACT_VALUE",    "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front right temperature flap actual value"},
+    {"id": "CUPRA_FRONT_RIGHT_T_FLAP_ACTUAL_VALUE", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front right temperature flap actual value"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "263D"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_CLIMATE_RR_DEFL_T", "path": "Engine", "fmt": { "len": 8, "max": 84.915, "mul": 0.333, "unit": "celsius" }, "name": "Rear deflector temperature"}
+    {"id": "CUPRA_CLIMATE_RR_DEFL_T", "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Rear deflector temperature"},
+    {"id": "CUPRA_REAR_DEFLECTOR_T",  "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Rear deflector temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "27C3"}, "freq": 1,
   "signals": [
@@ -551,6 +576,10 @@
   "signals": [
     {"id": "CUPRA_WNDSHLD_TEMP",    "path": "Climate", "fmt": {           "len": 8, "max": 108.08, "min": -38.8, "mul": 0.576,           "add": -38.8, "unit": "celsius" }, "name": "Windshield temperature"},
     {"id": "CUPRA_HVAC_INSIDE_HUM", "path": "Climate", "fmt": {"bix": 32, "len": 8, "max": 100,                                "div": 2,               "unit": "percent" }, "name": "Inside humidity"}
+  ]},
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "27D6"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_AC_COMPRESSOR_POWER_CONSUMPTION", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 10.2, "div": 25, "unit": "kilowatts" }, "name": "A/C compressor power consumption"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 1,
   "signals": [
@@ -572,7 +601,8 @@
   ]},
 { "hdr": "767", "rax": "7D1", "fcm1": true, "dbg": true, "cmd": {"22": "0838"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_ECALL_SOC", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 100, "unit": "percent" }, "name": "eCall battery charge level"},
+    {"id": "CUPRA_ECALL_BATTERY_CHARGE_STATUS", "path": "Battery", "fmt": {          "len": 8, "max": 100, "unit": "scalar"  }, "name": "Ecall battery charge status"},
+    {"id": "CUPRA_ECALL_SOC",                   "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 100, "unit": "percent" }, "name": "eCall battery charge level"},
     {"id": "CUPRA_ECALL_STATUS", "path": "Battery", "name": "eCall battery status", "fmt": {"len": 8, "map": {
           "1": { "description": "CRITICAL", "value": "CRITICAL" },
           "2": { "description": "NORMAL",   "value": "NORMAL" }
@@ -625,6 +655,10 @@
   "signals": [
     {"id": "CUPRA_ACT", "path": "Engine", "fmt": { "len": 16, "max": 100, "mul": 0.01, "sign": true, "unit": "percent" }, "name": "Turbine actuator 1 bank 1: activation"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1135"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_COOLANT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1139"}, "freq": 5,
   "signals": [
     {"id": "CUPRA_MEAN_INJ_QUANTITY", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "mul": 0.01, "sign": true, "unit": "unknown" }, "name": "Mean injection quantity"}
@@ -633,13 +667,43 @@
   "signals": [
     {"id": "CUPRA_FUEL_CONS", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "liters" }, "name": "Fuel consumption"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1146"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_TOTAL", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires total"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1147"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_1000REV_C1", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires / 1000 revolutions, cylinder 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1148"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_1000REV_C3", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires / 1000 revolutions, cylinder 3"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1149"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_1000REV_C4", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires / 1000 revolutions, cylinder 4"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "114A"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_1000REV_C2", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires / 1000 revolutions, cylinder 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "114F"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_C1", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1150"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_MISFIRES_C3", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 3"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1151"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_EM_RPM_1", "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm" }, "name": "Electric motor 1 rpm"}
+    {"id": "CUPRA_EM_RPM_1",         "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm"    }, "name": "Electric motor 1 rpm"},
+    {"id": "CUPRA_MISFIRES__CYL__4", "path": "ECU",    "fmt": { "len": 16, "max": 65535,                                          "unit": "scalar" }, "name": "Misfires, cylinder 4"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1152"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_EM_RPM_2", "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm" }, "name": "Electric motor 2 rpm"}
+    {"id": "CUPRA_EM_RPM_2",         "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm"    }, "name": "Electric motor 2 rpm"},
+    {"id": "CUPRA_MISFIRES__CYL__2", "path": "ECU",    "fmt": { "len": 16, "max": 65535,                                          "unit": "scalar" }, "name": "Misfires, cylinder 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1153"}, "freq": 10.25,
   "signals": [
@@ -706,6 +770,10 @@
   "signals": [
     {"id": "CUPRA_HIGH_FUEL_P_CONTROL_DEVIATION", "path": "Fuel", "fmt": { "len": 16, "max": 3276700, "min": -3276800, "mul": 100, "sign": true, "unit": "unknown" }, "name": "High fuel pressure control deviation"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1282"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_EXHAUST_GAS_T_BEFORE_CATALYST", "path": "Engine", "fmt": { "len": 16, "max": 1116.77, "min": -193.93, "div": 50, "add": -193.93, "unit": "celsius" }, "name": "Exhaust gas temperature before catalyst"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "146D"}, "freq": 300,
   "signals": [
     {"id": "CUPRA_INJ_7_RAIL_P_CAL_PT_1", "path": "Engine", "fmt": { "len": 16, "max": 1638.35, "min": -1638.4, "mul": 0.05, "sign": true, "unit": "unknown" }, "name": "Injector 7: rail pressure calibration point 1"}
@@ -730,9 +798,29 @@
   "signals": [
     {"id": "CUPRA_INJ_2_RAIL_P_CAL_PT_3_147A", "path": "Engine", "fmt": { "len": 16, "max": 1638.35, "min": -1638.4, "mul": 0.05, "sign": true, "unit": "unknown" }, "name": "Injector 2: rail pressure calibration point 3"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14B4"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_FUEL_LEVEL_INPUT_V1", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "liters" }, "name": "Fuel level input, v1", "suggestedMetric": "fuelTankLevel"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14CB"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14F8"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_AAT_V1", "path": "Engine", "fmt": { "len": 16, "max": 11336.3, "min": -460, "mul": 0.18, "add": -460, "unit": "fahrenheit" }, "name": "Ambient air temperature, v1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1515"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_CAT_T_CALC", "path": "Engine", "fmt": { "len": 16, "max": 327625, "min": -50, "mul": 5, "add": -50, "unit": "celsius" }, "name": "Catalyst temperature, calculated"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2005"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_BRAKE_BST_P", "path": "Control", "fmt": { "len": 16, "max": 65.535, "div": 1000, "unit": "bars" }, "name": "Brake booster pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "201A"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_EOT_CALC", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "celsius" }, "name": "Engine oil temperature, calculated", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2061"}, "freq": 0.25,
   "signals": [
@@ -741,6 +829,10 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2062"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_APP_POS2", "path": "Control.Pedals", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Accelerator pedal position sensor 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2206"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_FUEL_LEVEL_INPUT_V2", "path": "Fuel", "fmt": { "len": 8, "max": 255, "unit": "liters" }, "name": "Fuel level input, v2", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 5,
   "signals": [
@@ -793,7 +885,8 @@
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "3841"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_ODO_TCM_1", "path": "Trips", "fmt": { "len": 32, "blsb": true, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (TCM #1)", "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_TCM_1", "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 4294967295,                                 "unit": "kilometers" },                  "name": "Odometer (TCM #1)",   "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V1",    "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10, "unit": "kilometers" },                   "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "3887"}, "freq": 1,
   "signals": [
@@ -838,6 +931,18 @@
   "signals": [
     {"id": "CUPRA_TIRE_RL_SPD_V2", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2002"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_ENGINE_TORQUE__AT", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "newtonMeters" }, "name": "Engine torque"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2102"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_AT_INPUT_SPEED", "path": "Transmission", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "rpm" }, "name": "Automatic transmission input speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2103"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_AT_OUTPUT_SPEED", "path": "Transmission", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "rpm" }, "name": "Automatic transmission output speed"}
+  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2104"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_ATF_T", "path": "Fluids", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Automatic transmission fluid temperature"}
@@ -861,6 +966,14 @@
         }}
     }
   ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2110"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_SPEC_TORQUE_TRANSINT", "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "newtonMeters" }, "name": "Engine torque during transmission"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2131"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_TORQUE_CONVERTER_SLIP", "path": "ECU", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "rpm" }, "name": "Torque converter slip"}
+  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_TIRE_FL_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
@@ -876,6 +989,10 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2B1E"}, "freq": 0.25,
   "signals": [
     {"id": "CUPRA_TIRE_RR_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "704F"}, "freq": 1,
+  "signals": [
+    {"id": "CUPRA_ATF_MAX", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -50, "add": -50, "unit": "celsius" }, "name": "Automatic transmission fluid temperature, lifetime max"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "028C"}, "freq": 1,
   "signals": [
