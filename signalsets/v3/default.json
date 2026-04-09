@@ -352,7 +352,7 @@
   "signals": [
     {"id": "CUPRA_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                  "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
     {"id": "CUPRA_PQ35_ODO", "path": "Trips", "fmt": { "len": 16, "max": 655350,    "mul": 10, "unit": "kilometers" }, "name": "Odometer",        "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO",      "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
@@ -706,8 +706,8 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_V3",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
+    {"id": "CUPRA_ODO_2",  "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "10F3"}, "freq": 1,
   "signals": [
@@ -840,6 +840,11 @@
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "269B"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_MQB_DPF_DIFF_P_RAW_VALUE_2", "path": "Engine.DPF", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter diff pressure: raw value 2"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
+  "signals": [
+    {"id": "CUPRA_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "F42C"}, "freq": 1,
   "signals": [
@@ -1551,11 +1556,6 @@
   "signals": [
     {"id": "CUPRA_MQB_DPF_SOOT_MASS_CALCULATED", "path": "Engine.DPF", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "mul": 100, "div": 10000, "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter soot mass calculated"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 5,
-  "signals": [
-    {"id": "CUPRA_ODO",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "29D4"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_ENG_TRQ_REQ_1", "path": "Drivetrain", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "newtonMeters" }, "name": "Driver torque requested #1"}
@@ -2177,21 +2177,12 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "210F"}, "freq": 1,
   "signals": [
+    {"id": "CUPRA_GEAR",           "path": "Transmission", "fmt": { "len": 8, "max": 255,                       "unit": "scalar" }, "name": "Gear"},
     {"id": "CUPRA_MQB_TCM_I_GEAR", "path": "Transmission", "fmt": { "len": 8, "max": 253, "min": -2, "add": -2, "unit": "scalar" }, "name": "Current gear"},
     {"id": "CUPRA_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
           "1": { "description": "Reverse", "value": "REVERSE" },
           "2": { "description": "Park",    "value": "PARK" },
           "3": { "description": "Drive",   "value": "DRIVE" }
-        }}
-    },
-    {"id": "CUPRA_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"len": 8, "map": {
-          "1": { "description": "First gear",   "value": "1" },
-          "2": { "description": "Second gear",  "value": "2" },
-          "3": { "description": "Third gear",   "value": "3" },
-          "4": { "description": "Fourth gear",  "value": "4" },
-          "5": { "description": "Fifth gear",   "value": "5" },
-          "6": { "description": "Sixth gear",   "value": "6" },
-          "7": { "description": "Seventh gear", "value": "7" }
         }}
     }
   ]},
