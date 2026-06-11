@@ -2185,21 +2185,12 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "210F"}, "freq": 1,
   "signals": [
+    {"id": "CUPRA_GEAR",           "path": "Transmission", "fmt": { "len": 8, "max": 255,                       "unit": "scalar" }, "name": "Gear"},
     {"id": "CUPRA_MQB_TCM_I_GEAR", "path": "Transmission", "fmt": { "len": 8, "max": 253, "min": -2, "add": -2, "unit": "scalar" }, "name": "Current gear"},
     {"id": "CUPRA_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
           "1": { "description": "Reverse", "value": "REVERSE" },
           "2": { "description": "Park",    "value": "PARK" },
           "3": { "description": "Drive",   "value": "DRIVE" }
-        }}
-    },
-    {"id": "CUPRA_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"len": 8, "map": {
-          "1": { "description": "First gear",   "value": "1" },
-          "2": { "description": "Second gear",  "value": "2" },
-          "3": { "description": "Third gear",   "value": "3" },
-          "4": { "description": "Fourth gear",  "value": "4" },
-          "5": { "description": "Fifth gear",   "value": "5" },
-          "6": { "description": "Sixth gear",   "value": "6" },
-          "7": { "description": "Seventh gear", "value": "7" }
         }}
     }
   ]},
