@@ -709,7 +709,8 @@
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_PQ35_GEN_LOAD", "path": "Engine", "fmt": { "len": 16, "max": 100, "div": 100, "unit": "percent" }, "name": "Generator load"}
+    {"id": "CUPRA_PQ35_GEN_LOAD", "path": "Engine",  "fmt": { "len": 16, "max": 100,    "div": 100, "unit": "percent" }, "name": "Generator load"},
+    {"id": "CUPRA_BRAKE_P",       "path": "Control", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "bars"    }, "name": "Brake pressure"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "105E"}, "freq": 1,
   "signals": [
@@ -1063,7 +1064,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "113F"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_FUEL_CONS", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "liters" }, "name": "Fuel consumption"}
+    {"id": "CUPRA_FUEL_CONS", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "liters"        }, "name": "Fuel consumption"},
+    {"id": "CUPRA_FUEL_RATE", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "litersPerHour" }, "name": "Fuel rate"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1146"}, "freq": 1,
   "signals": [
@@ -1197,8 +1199,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BD"}, "freq": 15,
   "signals": [
-    {"id": "CUPRA_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,               "unit": "centimeters" }, "name": "Oil level warning threshold"},
-    {"id": "CUPRA_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,  "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"}
+    {"id": "CUPRA_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,                              "unit": "centimeters" }, "name": "Oil level warning threshold"},
+    {"id": "CUPRA_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,                 "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"},
+    {"id": "CUPRA_EOT_ECM",           "path": "Engine", "fmt": { "len": 16, "max": 200,     "min": -40,      "div": 10,   "add": -273.1,               "unit": "celsius"     }, "name": "Engine oil temperature, engine control module"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BE"}, "freq": 1,
   "signals": [
@@ -1244,6 +1247,10 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1282"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_EXHAUST_GAS_T_BEFORE_CATALYST", "path": "Engine", "fmt": { "len": 16, "max": 1116.77, "min": -193.93, "div": 50, "add": -193.93, "unit": "celsius" }, "name": "Exhaust gas temperature before catalyst"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "128A"}, "freq": 5,
+  "signals": [
+    {"id": "CUPRA_FUEL_T", "path": "Fuel", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Fuel temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "12FC"}, "freq": 1,
   "signals": [
