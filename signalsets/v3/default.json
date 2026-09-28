@@ -1,4 +1,6 @@
 { "ecu": [
+    { "hdr": "714", "type": "cluster" },
+    { "hdr": "746", "type": "hvac" },
     { "hdr": "7E1", "type": "transmission" }
   ],
   "commands": [
@@ -460,7 +462,7 @@
   ]},
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "22B8"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_MILEAGE_HR", "path": "Trips", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR"}
+    {"id": "CUPRA_ODO_MILEAGE_HR", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR"}
   ]},
 { "hdr": "715", "rax": "77F", "fcm1": true, "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
@@ -1464,8 +1466,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "113A"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_SEG_AD_MMV_ER_H_2",  "path": "Engine", "fmt": { "len": 16, "max": 7.8123,   "min": -7.8125, "mul": 78123,        "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER_H, 2"},
-    {"id": "CUPRA_LONG_TERM_THROTTLE", "path": "Engine", "fmt": { "len": 16, "max": 3.999935,                 "mul": 0.0000610351,                                 "unit": "percent" }, "name": "Long term throttle adaptation to MAF sensor"}
+    {"id": "CUPRA_SEG_AD_MMV_ER_H_2",  "path": "Engine", "fmt": { "len": 16, "max": 7.8123, "min": -7.8125, "mul": 78123,        "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER_H, 2"},
+    {"id": "CUPRA_LONG_TERM_THROTTLE", "path": "Engine", "fmt": { "len": 16, "max": 3.99,                   "mul": 0.0000610351,                                 "unit": "percent" }, "name": "Long term throttle adaptation to MAF sensor"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "113B"}, "freq": 1,
   "signals": [
@@ -1745,7 +1747,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11DC"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_MAP_RAW",            "path": "Engine", "fmt": { "len": 16, "max": 5119.9218, "mul": 5,      "div": 64,    "unit": "unknown" }, "name": "Manifold absolute pressure, raw value"},
-    {"id": "CUPRA_INT_MANIFOLD_P_RAW", "path": "Engine", "fmt": { "len": 8,  "max": 19.921875, "mul": 781.25, "div": 10000, "unit": "unknown" }, "name": "Intake manifold pressure raw value"}
+    {"id": "CUPRA_INT_MANIFOLD_P_RAW", "path": "Engine", "fmt": { "len": 8,  "max": 19.92,     "mul": 781.25, "div": 10000, "unit": "unknown" }, "name": "Intake manifold pressure raw value"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11DD"}, "freq": 1,
   "signals": [
@@ -1810,19 +1812,19 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "120E"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C1_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 1 "}
+    {"id": "CUPRA_KNOCK_SNS_C1_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 1 "}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "120F"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C3_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 3 "}
+    {"id": "CUPRA_KNOCK_SNS_C3_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 3 "}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1210"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C4_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 4 "}
+    {"id": "CUPRA_KNOCK_SNS_C4_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 4 "}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1211"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C2_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 2 "}
+    {"id": "CUPRA_KNOCK_SNS_C2_V_MS", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 2 "}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1213"}, "freq": 1,
   "signals": [
@@ -1891,7 +1893,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "128C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_AVG_INJ_TIME", "path": "Engine", "fmt": { "len": 32, "max": 1717986.9180000001, "div": 2500, "unit": "milliseconds" }, "name": "Avg. injection time"}
+    {"id": "CUPRA_AVG_INJ_TIME", "path": "Engine", "fmt": { "len": 32, "max": 1717986, "div": 2500, "unit": "milliseconds" }, "name": "Avg. injection time"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1290"}, "freq": 5,
   "signals": [
@@ -1931,11 +1933,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "133F"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_TQ_REDUCTION_REQ_ESP", "path": "Engine", "fmt": { "len": 32, "max": 214748364.6999999881, "min": -214748364.8000000119, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Torque reduction request from ESP"}
+    {"id": "CUPRA_TQ_REDUCTION_REQ_ESP", "path": "Engine", "fmt": { "len": 32, "max": 214748364, "min": -214748364, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Torque reduction request from ESP"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1340"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_TQ_INCREASE_REQ_ESP", "path": "Engine", "fmt": { "len": 32, "max": 214748364.6999999881, "min": -214748364.8000000119, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Torque increase request from ESP"}
+    {"id": "CUPRA_TQ_INCREASE_REQ_ESP", "path": "Engine", "fmt": { "len": 32, "max": 214748364, "min": -214748364, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Torque increase request from ESP"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1341"}, "freq": 1,
   "signals": [
@@ -2059,7 +2061,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "13CD"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_MAF_RATE", "path": "Engine", "fmt": { "len": 16, "max": 2047.96875, "div": 32, "unit": "unknown" }, "name": "Mass air flow rate"}
+    {"id": "CUPRA_MAF_RATE", "path": "Engine", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "unknown" }, "name": "Mass air flow rate"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "13F2"}, "freq": 1,
   "signals": [
@@ -2139,8 +2141,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1490"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_BRAKE_BOOSTER_LOW_P_ACT", "path": "Control", "fmt": { "len": 16, "max": 2559.9937,                        "mul": 39063,  "div": 1000000,               "unit": "unknown" }, "name": "Brake booster low pressure, actual"},
-    {"id": "CUPRA_BRAKE_BOOSTER_ACT",       "path": "Control", "fmt": { "len": 16, "max": 1279.944554, "min": -1279.983616, "mul": 390.62, "div": 10000,   "sign": true, "unit": "unknown" }, "name": "Brake booster, actual vacuum"}
+    {"id": "CUPRA_BRAKE_BOOSTER_LOW_P_ACT", "path": "Control", "fmt": { "len": 16, "max": 2559.9937,               "mul": 39063,  "div": 1000000,               "unit": "unknown" }, "name": "Brake booster low pressure, actual"},
+    {"id": "CUPRA_BRAKE_BOOSTER_ACT",       "path": "Control", "fmt": { "len": 16, "max": 1279,      "min": -1279, "mul": 390.62, "div": 10000,   "sign": true, "unit": "unknown" }, "name": "Brake booster, actual vacuum"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "149E"}, "freq": 5,
   "signals": [
@@ -2148,7 +2150,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14A1"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_RATED_DRIVE_TQ", "path": "Engine", "fmt": { "len": 32, "max": 214748364.6999999881, "min": -214748364.8000000119, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Rated drive torque"}
+    {"id": "CUPRA_RATED_DRIVE_TQ", "path": "Engine", "fmt": { "len": 32, "max": 214748364, "min": -214748364, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Rated drive torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14B4"}, "freq": 1,
   "signals": [
@@ -2313,11 +2315,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "15E7"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_EFFECTIVE_INJ_DUR", "path": "Engine", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "milliseconds" }, "name": "Effective injection duration"}
+    {"id": "CUPRA_EFFECTIVE_INJ_DUR", "path": "Engine", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "milliseconds" }, "name": "Effective injection duration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1610"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_REQ_BRAKE_TQ", "path": "Control", "fmt": { "len": 32, "max": 214748364.6999999881, "min": -214748364.8000000119, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Requested brake torque, auxiliary system"}
+    {"id": "CUPRA_REQ_BRAKE_TQ", "path": "Control", "fmt": { "len": 32, "max": 214748364, "min": -214748364, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Requested brake torque, auxiliary system"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1626"}, "freq": 1,
   "signals": [
@@ -2679,7 +2681,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "201A"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_CAM_ADJ_EXH_ACT", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "degrees" }, "name": "Camshaft adjustment, exhaust, actual value"},
-    {"id": "CUPRA_EOT_CALC",        "path": "Engine", "fmt": { "len": 16, "max": 65535,                                           "unit": "celsius" }, "name": "Engine oil temperature, calculated"}
+    {"id": "CUPRA_EOT_CALC",        "path": "Engine", "fmt": { "len": 16, "max": 3276,   "min": -3276,   "div": 10, "sign": true, "unit": "celsius" }, "name": "Engine oil temperature, calculated"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "201D"}, "freq": 1,
   "signals": [
@@ -2751,19 +2753,19 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "2046"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_1", "path": "Engine", "fmt": { "len": 16, "max": 12.000258, "min": -12.000624, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 1"}
+    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_1", "path": "Engine", "fmt": { "len": 16, "max": 12, "min": -12, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "2047"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_2", "path": "Engine", "fmt": { "len": 16, "max": 12.000258, "min": -12.000624, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 2"}
+    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_2", "path": "Engine", "fmt": { "len": 16, "max": 12, "min": -12, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "2048"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_3", "path": "Engine", "fmt": { "len": 16, "max": 12.000258, "min": -12.000624, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 3"}
+    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_3", "path": "Engine", "fmt": { "len": 16, "max": 12, "min": -12, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 3"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "2049"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_4", "path": "Engine", "fmt": { "len": 16, "max": 12.000258, "min": -12.000624, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 4"}
+    {"id": "CUPRA_INJ_AMOUNT_DEV_CYL_4", "path": "Engine", "fmt": { "len": 16, "max": 12, "min": -12, "mul": 0.00036623, "sign": true, "unit": "unknown" }, "name": "Injection amount deviation cylinder 4"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "204C"}, "freq": 1,
   "signals": [
@@ -2827,7 +2829,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2085"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_DPF_OFFSET_DIFF_P", "path": "Engine", "fmt": { "len": 16, "max": 5239.84375, "min": -5000, "mul": 0.15625, "add": -5000, "unit": "unknown" }, "name": "Diesel particulate filter offset for differential pressure"}
+    {"id": "CUPRA_DPF_OFFSET_DIFF_P", "path": "Engine", "fmt": { "len": 16, "max": 5239, "min": -5000, "mul": 0.15625, "add": -5000, "unit": "unknown" }, "name": "Diesel particulate filter offset for differential pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2087"}, "freq": 1,
   "signals": [
@@ -2845,7 +2847,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "208A"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_OIL_ASH_RESIDUE", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "unknown" }, "name": "Oil ash residue"}
+    {"id": "CUPRA_OIL_ASH_RESIDUE", "path": "Engine", "fmt": { "len": 32, "max": 1310, "mul": 0.0000003052, "unit": "unknown" }, "name": "Oil ash residue"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "208B"}, "freq": 1,
   "signals": [
@@ -2854,13 +2856,13 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "208C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_DPF_SOOT_MEAS",  "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter soot measured"},
-    {"id": "CUPRA_SOOT_MASS_MEAS", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                            "unit": "unknown" }, "name": "Soot mass measured"}
+    {"id": "CUPRA_DPF_SOOT_MEAS",  "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100,              "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter soot measured"},
+    {"id": "CUPRA_SOOT_MASS_MEAS", "path": "Engine", "fmt": { "len": 16, "max": 127,    "min": -128,    "div": 256, "add": -128,               "unit": "unknown" }, "name": "Soot mass measured"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "208D"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_GPF_DIST_SINCE_REGEN", "path": "Trips", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilometers" }, "name": "Gasoline particulate filter distance since last regeneration"},
-    {"id": "CUPRA_DIST_SINCE_REGEN",     "path": "Trips", "fmt": { "len": 16, "max": 6553.5,             "div": 10,   "unit": "kilometers" }, "name": "Distance since last regeneration"}
+    {"id": "CUPRA_GPF_DIST_SINCE_REGEN", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Gasoline particulate filter distance since last regeneration"},
+    {"id": "CUPRA_DIST_SINCE_REGEN",     "path": "Trips", "fmt": { "len": 16, "max": 6553.5,  "div": 10,   "unit": "kilometers" }, "name": "Distance since last regeneration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2097"}, "freq": 1,
   "signals": [
@@ -3199,7 +3201,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "39A3"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_CHG_P_ACTUATOR_SPEC", "path": "Battery", "fmt": { "len": 16, "max": 100, "mul": 0.012207, "unit": "percent" }, "name": "Charge pressure actuator, specified position"}
+    {"id": "CUPRA_CHG_P_ACTUATOR_SPEC", "path": "Battery", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "percent" }, "name": "Charge pressure actuator, specified position"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "39A4"}, "freq": 1,
   "signals": [
@@ -3593,11 +3595,9 @@
   "signals": [
     {"id": "CUPRA_SERVICE_LIM_7E0", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "unknown" }, "name": "Service limit"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "58D1"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "58D1"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_ENG_OIL_LEVEL_ODO",         "path": "Trips",  "fmt": {           "len": 32, "max": 4294967295,                                           "unit": "kilometers" }, "name": "Engine oil level, odometer reading at entry"},
-    {"id": "CUPRA_ENG_OIL_LEVEL_ODO_READING", "path": "Trips",  "fmt": {"bix": 32, "len": 32, "max": 4294967295,                                           "unit": "kilometers" }, "name": "Engine oil level, odometer reading when determining oil level"},
-    {"id": "CUPRA_ENG_OIL_LEVEL",             "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 100,        "min": -327.68, "div": 100, "sign": true, "unit": "percent"    }, "name": "Engine oil level current value"}
+    {"id": "CUPRA_ENG_OIL_LEVEL", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 100, "min": -327.68, "div": 100, "sign": true, "unit": "percent" }, "name": "Engine oil level current value"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F406"}, "freq": 1,
   "signals": [
@@ -3613,7 +3613,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
+    {"id": "CUPRA_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F41F"}, "freq": 1,
   "signals": [
@@ -3673,8 +3673,9 @@
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "3841"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_MQB_TCM_ODO", "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10, "unit": "kilometers" },                   "name": "Odometer", "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_TCM_1",   "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 4294967295,                                 "unit": "kilometers" },                  "name": "Odometer (TCM #1)",   "suggestedMetric": "odometer"}
+    {"id": "CUPRA_MQB_TCM_ODO", "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10,            "unit": "kilometers" },                   "name": "Odometer", "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_TCM_1",   "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 4294967295,                                            "unit": "kilometers" },                  "name": "Odometer (TCM #1)",   "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V1",      "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 429496729,             "div": 10,                      "unit": "kilometers" },                  "name": "Odometer",            "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "3887"}, "freq": 1,
   "signals": [
@@ -5199,7 +5200,7 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1802"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_BMS_I", "path": "Battery", "fmt": { "len": 16, "max": 166269, "min": -1500, "mul": 2.56, "add": -1500, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"}
+    {"id": "CUPRA_BMS_I", "path": "Battery", "fmt": { "len": 16, "max": 166269, "min": -1500, "mul": 2.56, "add": -1500, "nullmin": -1500, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "180C"}, "freq": 1,
   "signals": [
@@ -6362,7 +6363,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ECU_DIST_DRIVEN", "path": "Trips", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilometers" }, "name": "Engine control unit distance driven"}
+    {"id": "CUPRA_ECU_DIST_DRIVEN", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Engine control unit distance driven"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1161"}, "freq": 0.25,
   "signals": [
@@ -6374,19 +6375,19 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "120E"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C1_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 1 "}
+    {"id": "CUPRA_KNOCK_SNS_C1_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 1 "}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "120F"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C3_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 3 "}
+    {"id": "CUPRA_KNOCK_SNS_C3_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 3 "}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1210"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C4_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 4 "}
+    {"id": "CUPRA_KNOCK_SNS_C4_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 4 "}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1211"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_KNOCK_SNS_C2_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276.8023480473, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 2 "}
+    {"id": "CUPRA_KNOCK_SNS_C2_V_MS_V2", "path": "Engine", "fmt": { "len": 32, "max": 3276, "mul": 0.0076294, "div": 10000, "unit": "scalar" }, "name": "Knock sensor, cylinder 2 "}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1272"}, "freq": 5,
   "signals": [
@@ -6394,7 +6395,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1290"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_OXYGEN_SNS_1_BANK_1_CERAMIC_T_V2", "path": "Engine", "fmt": { "len": 16, "max": 1262.793795, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15, "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"}
+    {"id": "CUPRA_OXYGEN_SNS_1_BANK_1_CERAMIC_T_V2", "path": "Engine", "fmt": { "len": 16, "max": 1262, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15, "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1291"}, "freq": 5,
   "signals": [
