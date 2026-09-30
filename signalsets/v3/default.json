@@ -1,6 +1,7 @@
 { "ecu": [
     { "hdr": "714", "type": "cluster" },
     { "hdr": "746", "type": "hvac" },
+    { "hdr": "767", "type": "telematics" },
     { "hdr": "7E1", "type": "transmission" }
   ],
   "commands": [
