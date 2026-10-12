@@ -12,17 +12,18 @@
   "commands": [
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_TID_RL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear left tire sensor id"},
-    {"id": "CUPRA_TP_FR",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front right tire pressure",            "suggestedMetric": "frontRightTirePressure"},
-    {"id": "CUPRA_TP_RL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear left tire current pressure",      "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "CUPRA_TP_1",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 1 current pressure",              "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "CUPRA_TT_FR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front right tire temperature",         "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "CUPRA_TT_RL",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Rear left tire temperature",           "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "CUPRA_TT_1",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 1 temperature",                   "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "CUPRA_TP_SET_FR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Front right tire pressure, set point"},
-    {"id": "CUPRA_TPS_RL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Rear left tire specified pressure"},
-    {"id": "CUPRA_TPS_1",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire 1 specified pressure"},
-    {"id": "CUPRA_TPW_RL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear left tire warning pressure"},
+    {"id": "CUPRA_TID_RL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                            "unit": "scalar"  }, "name": "Rear left tire sensor id"},
+    {"id": "CUPRA_TID_1",     "path": "Tires", "fmt": {           "len": 32, "max": 4294967295,                                                     "unit": "scalar"  }, "name": "Tire 1 sensor id"},
+    {"id": "CUPRA_TP_FR",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,                  "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front right tire pressure",            "suggestedMetric": "frontRightTirePressure"},
+    {"id": "CUPRA_TP_RL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear left tire current pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "CUPRA_TP_1",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 1 current pressure",              "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "CUPRA_TT_FR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,        "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front right tire temperature",         "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "CUPRA_TT_RL",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Rear left tire temperature",           "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "CUPRA_TT_1",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 1 temperature",                   "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "CUPRA_TP_SET_FR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,                  "div": 40,                              "unit": "bars"    }, "name": "Front right tire pressure, set point"},
+    {"id": "CUPRA_TPS_RL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Rear left tire specified pressure"},
+    {"id": "CUPRA_TPS_1",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Tire 1 specified pressure"},
+    {"id": "CUPRA_TPW_RL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Rear left tire warning pressure"},
     {"id": "CUPRA_TPOS_RL", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -33,16 +34,17 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_TID_FR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front right tire sensor id"},
-    {"id": "CUPRA_TP_FL",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "CUPRA_TP_FR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
-    {"id": "CUPRA_TT_FL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "CUPRA_TP_2",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire #2 pressure"},
-    {"id": "CUPRA_TT_FR_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "CUPRA_TP_SET_FL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Front left tire pressure, set point"},
-    {"id": "CUPRA_TPS_FR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Front right tire specified pressure"},
-    {"id": "CUPRA_TPS_2",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire 2 specified pressure"},
-    {"id": "CUPRA_TPW_FR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front right tire warning pressure"},
+    {"id": "CUPRA_TID_FR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                            "unit": "scalar"  }, "name": "Front right tire sensor id"},
+    {"id": "CUPRA_TID_2",     "path": "Tires", "fmt": {           "len": 32, "max": 4294967295,                                                     "unit": "scalar"  }, "name": "Tire 2 sensor id"},
+    {"id": "CUPRA_TP_FL",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,                  "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "CUPRA_TP_FR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
+    {"id": "CUPRA_TT_FL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,        "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "CUPRA_TP_2",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Tire #2 pressure"},
+    {"id": "CUPRA_TT_FR_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "CUPRA_TP_SET_FL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,                  "div": 40,                              "unit": "bars"    }, "name": "Front left tire pressure, set point"},
+    {"id": "CUPRA_TPS_FR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Front right tire specified pressure"},
+    {"id": "CUPRA_TPS_2",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Tire 2 specified pressure"},
+    {"id": "CUPRA_TPW_FR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Front right tire warning pressure"},
     {"id": "CUPRA_TPOS_FR", "path": "Tires", "name": "Tire 2 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -53,17 +55,18 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_TID_RR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear right tire sensor id"},
-    {"id": "CUPRA_TP_RL_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "CUPRA_TP_RR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
-    {"id": "CUPRA_TP_3",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 3 current pressure",            "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "CUPRA_TT_RL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear left tire temperature",         "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "CUPRA_TT_RR",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "CUPRA_TT_3",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "CUPRA_TP_SET_RL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Rear left tire pressure, set point"},
-    {"id": "CUPRA_TPS_RR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Rear right tire specified pressure"},
-    {"id": "CUPRA_TPS_3",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire 3 specified pressure"},
-    {"id": "CUPRA_TPW_RR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear right tire warning pressure"},
+    {"id": "CUPRA_TID_RR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                            "unit": "scalar"  }, "name": "Rear right tire sensor id"},
+    {"id": "CUPRA_TID_3",     "path": "Tires", "fmt": {           "len": 32, "max": 4294967295,                                                     "unit": "scalar"  }, "name": "Tire 3 sensor id"},
+    {"id": "CUPRA_TP_RL_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,                  "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "CUPRA_TP_RR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
+    {"id": "CUPRA_TP_3",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 3 current pressure",            "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "CUPRA_TT_RL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,        "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear left tire temperature",         "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "CUPRA_TT_RR",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "CUPRA_TT_3",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "CUPRA_TP_SET_RL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,                  "div": 40,                              "unit": "bars"    }, "name": "Rear left tire pressure, set point"},
+    {"id": "CUPRA_TPS_RR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Rear right tire specified pressure"},
+    {"id": "CUPRA_TPS_3",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Tire 3 specified pressure"},
+    {"id": "CUPRA_TPW_RR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Rear right tire warning pressure"},
     {"id": "CUPRA_TPOS_RR", "path": "Tires", "name": "Tire 3 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -74,17 +77,18 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_TID_FL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front left tire sensor id"},
-    {"id": "CUPRA_TP_RR_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear right tire pressure",            "suggestedMetric": "rearRightTirePressure"},
-    {"id": "CUPRA_TP_FL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front left tire current pressure",    "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "CUPRA_TP_4",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 4 current pressure",             "suggestedMetric": "rearRightTirePressure"},
-    {"id": "CUPRA_TT_RR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear right tire temperature",         "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "CUPRA_TT_FL_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "CUPRA_TT_4",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 4 temperature",                  "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "CUPRA_TP_SET_RR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Rear right tire pressure, set point"},
-    {"id": "CUPRA_TPS_FL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Front left tire specified pressure"},
-    {"id": "CUPRA_TPS_4",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire 4 specified pressure"},
-    {"id": "CUPRA_TPW_FL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front left tire warning pressure"},
+    {"id": "CUPRA_TID_FL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                            "unit": "scalar"  }, "name": "Front left tire sensor id"},
+    {"id": "CUPRA_TID_4",     "path": "Tires", "fmt": {           "len": 32, "max": 4294967295,                                                     "unit": "scalar"  }, "name": "Tire 4 sensor id"},
+    {"id": "CUPRA_TP_RR_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,                  "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear right tire pressure",            "suggestedMetric": "rearRightTirePressure"},
+    {"id": "CUPRA_TP_FL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front left tire current pressure",    "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "CUPRA_TP_4",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 4 current pressure",             "suggestedMetric": "rearRightTirePressure"},
+    {"id": "CUPRA_TT_RR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,        "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear right tire temperature",         "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "CUPRA_TT_FL_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "CUPRA_TT_4",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                               "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 4 temperature",                  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "CUPRA_TP_SET_RR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,                  "div": 40,                              "unit": "bars"    }, "name": "Rear right tire pressure, set point"},
+    {"id": "CUPRA_TPS_FL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,             "nullmax": 25.5, "unit": "bars"    }, "name": "Front left tire specified pressure"},
+    {"id": "CUPRA_TPS_4",     "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Tire 4 specified pressure"},
+    {"id": "CUPRA_TPW_FL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,                   "div": 10,                              "unit": "bars"    }, "name": "Front left tire warning pressure"},
     {"id": "CUPRA_TPOS_FL", "path": "Tires", "name": "Tire 4 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -1234,7 +1238,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1017"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_A_C_REFRIGERANT_PRES", "path": "Engine", "fmt": { "len": 16, "max": 65534, "min": -65536, "mul": 2, "sign": true, "unit": "unknown" }, "name": "A/C refrigerant pressure"}
+    {"id": "CUPRA_A_C_REFRIGERANT_PRES", "path": "Engine", "fmt": { "len": 16, "max": 65534,  "min": -65536, "mul": 2, "sign": true, "unit": "unknown" }, "name": "A/C refrigerant pressure"},
+    {"id": "CUPRA_AC_COMP_P",            "path": "Engine", "fmt": { "len": 16, "max": 131070,                "mul": 2,               "unit": "unknown" }, "name": "Air conditioning compressor pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1018"}, "freq": 1,
   "signals": [
@@ -1251,7 +1256,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "101C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_GENERATOR_LOAD_SIG", "path": "Engine", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "Generator load signal"}
+    {"id": "CUPRA_GENERATOR_LOAD_SIG", "path": "Engine", "fmt": { "len": 16, "max": 100,                 "div": 100, "sign": true, "unit": "percent" }, "name": "Generator load signal"},
+    {"id": "CUPRA_ALTERNATOR_LOAD",    "path": "Engine", "fmt": { "len": 16, "max": 100, "min": -327.68, "div": 100, "sign": true, "unit": "percent" }, "name": "Alternator load"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1023"}, "freq": 0.25,
   "signals": [
@@ -1259,8 +1265,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "1024"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_ALTERNATOR_LOAD", "path": "Engine", "fmt": { "len": 8,  "max": 12750,                  "mul": 50,                               "unit": "watts"   }, "name": "Alternator load"},
-    {"id": "CUPRA_MQB_AIR_MASS_1",  "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "mul": 1000, "div": 10000, "sign": true, "unit": "unknown" }, "name": "Air mass meter 1"}
+    {"id": "CUPRA_ALTERNATOR_LOAD_V2", "path": "Engine", "fmt": { "len": 8,  "max": 12750,                  "mul": 50,                               "unit": "watts"   }, "name": "Alternator load"},
+    {"id": "CUPRA_MQB_AIR_MASS_1",     "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "mul": 1000, "div": 10000, "sign": true, "unit": "unknown" }, "name": "Air mass meter 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1026"}, "freq": 1,
   "signals": [
@@ -1409,7 +1415,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1097"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_GENERATOR_PERFORMANCE", "path": "Engine", "fmt": { "len": 16, "max": 308822.421, "min": -308831.8464, "mul": 94248, "div": 10000, "sign": true, "unit": "watts" }, "name": "Generator performance"}
+    {"id": "CUPRA_GENERATOR_PERFORMANCE", "path": "Engine", "fmt": { "len": 16, "max": 308822.421,  "min": -308831.8464, "mul": 94248,  "div": 10000, "sign": true, "unit": "watts" }, "name": "Generator performance"},
+    {"id": "CUPRA_GEN_POWER",             "path": "Engine", "fmt": { "len": 16, "max": 617647.7145,                      "mul": 9.4247,                             "unit": "watts" }, "name": "Generator power"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "109B"}, "freq": 1,
   "signals": [
@@ -1723,7 +1730,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1124"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_CAMSHAFT_VSS", "path": "Movement", "fmt": { "len": 16, "max": 16383.75, "mul": 2500, "div": 10000, "unit": "rpm" }, "name": "Camshaft speed"}
+    {"id": "CUPRA_CAMSHAFT_VSS", "path": "Movement", "fmt": { "len": 16, "max": 16383.75, "mul": 2500, "div": 10000, "unit": "rpm" }, "name": "Camshaft speed"},
+    {"id": "CUPRA_CAM_SPD",      "path": "Movement", "fmt": { "len": 16, "max": 16383.75,              "div": 4,     "unit": "rpm" }, "name": "Camshaft speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1125"}, "freq": 1,
   "signals": [
@@ -1971,7 +1979,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1177"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_T_AC_HEAT_EXCHANGER", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Temperature at air conditioner heat exchanger output"}
+    {"id": "CUPRA_T_AC_HEAT_EXCHANGER", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "nullmin": -273, "unit": "celsius" }, "name": "Temperature at air conditioner heat exchanger output"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "117D"}, "freq": 1,
   "signals": [
@@ -2452,7 +2460,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "133B"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_CAM_SPD",       "path": "Movement", "fmt": { "len": 16, "max": 9830,   "min": -9830,   "mul": 3,   "div": 10, "sign": true, "unit": "percent" }, "name": "Camshaft speed"},
+    {"id": "CUPRA_CAM_SPD_V2",    "path": "Movement", "fmt": { "len": 16, "max": 9830,   "min": -9830,   "mul": 3,   "div": 10, "sign": true, "unit": "percent" }, "name": "Camshaft speed"},
     {"id": "CUPRA_PQ35_CAMS_SPD", "path": "Movement", "fmt": { "len": 16, "max": 9830.1, "min": -9830.4, "mul": 0.3,            "sign": true, "unit": "rpm"     }, "name": "Camshaft speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "133F"}, "freq": 0.25,
@@ -2892,7 +2900,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14F7"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_PQ35_EXHAUST_GAS_T_SENSOR_2", "path": "Engine", "fmt": { "len": 16, "max": 3003.6, "min": -3549.9, "div": 10, "add": -273.1, "sign": true, "nullmin": -3549.9, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 2"}
+    {"id": "CUPRA_PQ35_EXHAUST_GAS_T_SENSOR_2", "path": "Engine", "fmt": { "len": 16, "max": 3003.6, "min": -3549.9, "div": 10, "add": -273.1, "sign": true, "nullmin": -273.1, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14F8"}, "freq": 5,
   "signals": [
@@ -3853,7 +3861,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "24FC"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_FUEL_TANK_FILL_LEVEL", "path": "Fuel", "fmt": { "len": 16, "max": 6553.5, "mul": 1000, "div": 10000, "unit": "liters" }, "name": "Fuel tank fill level"}
+    {"id": "CUPRA_FUEL_TANK_FILL_LEVEL", "path": "Fuel", "fmt": { "len": 16, "max": 6553.5, "mul": 1000, "div": 10000, "unit": "liters" }, "name": "Fuel tank fill level"},
+    {"id": "CUPRA_FLI_INPUT_VAR_2",      "path": "Fuel", "fmt": { "len": 16, "max": 6553.5,              "div": 10,    "unit": "liters" }, "name": "Fuel level input, variant 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "25CD"}, "freq": 1,
   "signals": [
@@ -7125,7 +7134,7 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E33"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVBAT_CELL_V_MAX",      "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
+    {"id": "CUPRA_HVBAT_CELL_V_MAX_V2",   "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
     {"id": "CUPRA_BMS_CELL_V_MAX",        "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage max, value"},
     {"id": "CUPRA_E_TRON_BMS_CELL_V_MAX", "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage max, value"},
     {"id": "CUPRA_BMS_CELL_V_MAX_IDX",    "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage max, index"},
@@ -7133,7 +7142,7 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E34"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVBAT_CELL_V_MIN",      "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
+    {"id": "CUPRA_HVBAT_CELL_V_MIN_V2",   "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
     {"id": "CUPRA_BMS_CELL_V_MIN",        "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage min, value"},
     {"id": "CUPRA_E_TRON_BMS_CELL_V_MIN", "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage min, value"},
     {"id": "CUPRA_BMS_CELL_V_MIN_IDX",    "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage min, index"},
@@ -7718,7 +7727,7 @@
   ]},
 { "hdr": "7E6", "dbg": true, "cmd": {"22": "3E97"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_MOTOR_RPM_V2", "path": "Engine", "fmt": { "len": 16, "max": 16383.749, "div": 4, "unit": "rpm" }, "name": "Drive motor speed, actual", "suggestedMetric": "engineSpeed"}
+    {"id": "CUPRA_MOTOR_RPM_V2", "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "rpm" }, "name": "Drive motor speed, actual", "suggestedMetric": "engineSpeed"}
   ]},
 { "hdr": "7E6", "dbg": true, "cmd": {"22": "3EB5"}, "freq": 5,
   "signals": [
@@ -8193,7 +8202,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "fcm1": true, "dbg": true, "cmd": {"22": "02BD"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_BMS_ODO", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer, battery management system"}
+    {"id": "CUPRA_BMS_ODO", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer, BMS"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7C", "dbg": true, "cmd": {"22": "0308"}, "freq": 1,
   "signals": [
@@ -8299,11 +8308,13 @@
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E33"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_HVBAT_CELL_V_MAX_V2", "path": "Battery", "fmt": {           "len": 16, "max": 15.997, "mul": 2441, "div": 10000, "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
+    {"id": "CUPRA_HVBAT_CELL_V_MAX",    "path": "Battery", "fmt": {           "len": 16, "max": 15.997,              "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
     {"id": "CUPRA_HVBAT_CELL_V_MAX_ID", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 65535,                             "unit": "scalar" }, "name": "HV battery cell voltage max, ID"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E34"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_HVBAT_CELL_V_MIN_V2", "path": "Battery", "fmt": {           "len": 16, "max": 15.997, "mul": 2441, "div": 10000, "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
+    {"id": "CUPRA_HVBAT_CELL_V_MIN",    "path": "Battery", "fmt": {           "len": 16, "max": 15.997,              "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
     {"id": "CUPRA_HVBAT_CELL_V_MIN_ID", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 65535,                             "unit": "scalar" }, "name": "HV battery cell voltage min, ID"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E36"}, "freq": 1,
