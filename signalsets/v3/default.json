@@ -619,10 +619,10 @@
   "signals": [
     {"id": "CUPRA_DASH_OIL_THERMAL_WEAR", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Oil thermal wear"}
   ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
+{ "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_RANGE_V2",        "path": "Trips", "fmt": { "len": 16, "max": 255,   "unit": "kilometers" }, "name": "Range remaining",   "suggestedMetric": "fuelRange"},
-    {"id": "CUPRA_PQ35_DIST_EMPTY", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to empty", "suggestedMetric": "fuelRange"}
+    {"id": "CUPRA_DTE",      "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to empty", "suggestedMetric": "fuelRange"},
+    {"id": "CUPRA_RANGE_V2", "path": "Trips", "fmt": { "len": 16, "max": 255,   "unit": "kilometers" }, "name": "Range remaining",   "suggestedMetric": "fuelRange"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2299"}, "freq": 1,
   "signals": [
