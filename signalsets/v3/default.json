@@ -609,7 +609,7 @@
     {"id": "CUPRA_PQ35_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",       "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,      "unit": "kilometers" }, "name": "Odometer, dash", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2206"}, "freq": 30,
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2206"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_FLI_V2", "path": "Fuel", "fmt": { "len": 8, "max": 255, "unit": "liters" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
   ]},
@@ -634,7 +634,7 @@
   "signals": [
     {"id": "CUPRA_FUEL_AVG", "path": "Fuel", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "liters" }, "name": "Fuel consumption, average"}
   ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "229A"}, "freq": 30,
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "229A"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_FLV",     "path": "Fuel", "fmt": { "len": 16, "max": 255,      "div": 8, "unit": "liters" }, "name": "Fuel remaining",   "suggestedMetric": "fuelTankLevel"},
     {"id": "CUPRA_FLI_714", "path": "Fuel", "fmt": { "len": 16, "max": 8191.875, "div": 8, "unit": "liters" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
@@ -2838,7 +2838,7 @@
   "signals": [
     {"id": "CUPRA_RATED_DRIVE_TQ", "path": "Engine", "fmt": { "len": 32, "max": 214748364, "min": -214748364, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Rated drive torque"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14B4"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14B4"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_FUEL_LEVEL_INPUT_V1", "path": "Fuel", "fmt": { "len": 16, "max": 327.67, "div": 100, "nullmax": 327.67, "unit": "liters" }, "name": "Fuel level input, v1", "suggestedMetric": "fuelTankLevel"}
   ]},
@@ -4831,7 +4831,7 @@
     {"id": "CUPRA_HIGH_P_EGR_CLOSING_2",          "path": "Engine",     "fmt": { "len": 8, "max": 100, "mul": -25, "div": 64, "add": 100,               "unit": "percent" }, "name": "High-pressure exhaust gas recirculation closing, variant 2"},
     {"id": "CUPRA_PQ35_HIGH_P_EGR_CLOSING_VAR_2", "path": "Engine.EGR", "fmt": { "len": 8, "max": 100,                                    "sign": true, "unit": "percent" }, "name": "High press EGR closing v2"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F42F"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F42F"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_FLI_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Fuel level input %", "suggestedMetric": "fuelTankLevel"}
   ]},
