@@ -383,15 +383,14 @@
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB5"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_RANGE_EST_CAN",        "path": "Battery", "fmt": {"bix": 32, "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Estimated reserve range"},
-    {"id": "CUPRA_E_TRON_RANGE_EST_CAN", "path": "Battery", "fmt": {"bix": 32, "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Estimated reserve range", "suggestedMetric": "electricRange"}
+    {"id": "CUPRA_RANGE_EST_CAN", "path": "Battery", "fmt": {"bix": 32, "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Range remaining, estimated", "suggestedMetric": "electricRange"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB6"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_RANGE",           "path": "Trips", "fmt": {           "len": 16, "max": 65535,                  "unit": "miles"  }, "name": "Range remaining, displayed",                   "suggestedMetric": "electricRange"},
-    {"id": "CUPRA_RANGE_V2",        "path": "Trips", "fmt": {           "len": 16, "max": 65535,                  "unit": "miles"  }, "name": "Range remaining, unit unconfirmed"},
     {"id": "CUPRA_RANGE_TOTAL_RAW", "path": "Trips", "fmt": {           "len": 16, "max": 2045,  "nullmax": 2045, "unit": "scalar" }, "name": "Total range, in the cluster's unit"},
-    {"id": "CUPRA_RANGE_PRI_RAW",   "path": "Trips", "fmt": {"bix": 16, "len": 16, "max": 2045,  "nullmax": 2045, "unit": "scalar" }, "name": "Primary drive range, in the cluster's unit"},
+    {"id": "CUPRA_RANGE_V2",        "path": "Trips", "fmt": {           "len": 16, "max": 65535,                  "unit": "miles"  }, "name": "Range remaining",                              "suggestedMetric": "electricRange"},
+    {"id": "CUPRA_E_TRON_RANGE_V2", "path": "Trips", "fmt": {           "len": 16, "max": 65535,                  "unit": "miles"  }, "name": "Range remaining, unit unconfirmed"},
+    {"id": "CUPRA_RANGE_PRI_RAW",   "path": "Trips", "fmt": {"bix": 16, "len": 16, "max": 2045,  "nullmax": 2045, "unit": "scalar" }, "name": "Battery range, in the cluster's unit"},
     {"id": "CUPRA_RANGE_SEC_RAW",   "path": "Trips", "fmt": {"bix": 32, "len": 16, "max": 2045,  "nullmax": 2045, "unit": "scalar" }, "name": "Secondary drive range, in the cluster's unit"},
     {"id": "CUPRA_RANGE_UNIT", "path": "Trips", "name": "Range distance unit", "fmt": {"bix": 55, "len": 1, "map": {
           "0": { "description": "Kilometers", "value": "KM" },
@@ -631,8 +630,8 @@
   ]},
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_DTE",      "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to empty", "suggestedMetric": "fuelRange"},
-    {"id": "CUPRA_RANGE_V2", "path": "Trips", "fmt": { "len": 16, "max": 255,   "unit": "kilometers" }, "name": "Range remaining",   "suggestedMetric": "fuelRange"}
+    {"id": "CUPRA_DTE",   "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to empty", "suggestedMetric": "fuelRange"},
+    {"id": "CUPRA_RANGE", "path": "Trips", "fmt": { "len": 16, "max": 255,   "unit": "kilometers" }, "name": "Range remaining",   "suggestedMetric": "fuelRange"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2299"}, "freq": 1,
   "signals": [
@@ -7932,7 +7931,7 @@
   ]},
 { "hdr": "FC00", "dbg": true, "cmd": {"22": "028C"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_SOC_V2", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 250, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
+    {"id": "CUPRA_SOC_V3", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 250, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "0335"}, "freq": 1,
   "signals": [
@@ -8173,7 +8172,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "3DEF"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_SOC_FC00", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"},
+    {"id": "CUPRA_SOC_FC00", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge, battery management system", "suggestedMetric": "stateOfCharge"},
     {"id": "CUPRA_SOC",      "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "3DF8"}, "freq": 1,
@@ -8242,7 +8241,8 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "028C"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_SOC_V2",   "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100,  "div": 250,              "unit": "percent" }, "name": "State of charge",           "suggestedMetric": "stateOfCharge"},
+    {"id": "CUPRA_SOC_V2",   "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 20.4, "div": 46,  "add": -6.4, "unit": "percent" }, "name": "State of charge, displayed", "suggestedMetric": "stateOfCharge"},
+    {"id": "CUPRA_SOC_V2",   "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100,  "div": 250,              "unit": "percent" }, "name": "State of charge",            "suggestedMetric": "stateOfCharge"},
     {"id": "CUPRA_SOC_DISP", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 20.4, "div": 46,  "add": -6.4, "unit": "percent" }, "name": "Displayed state of charge"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "fcm1": true, "dbg": true, "cmd": {"22": "02BD"}, "freq": 1,
@@ -8380,11 +8380,11 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3B"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_DC_BATTERY_V", "path": "Battery", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "volts" }, "name": "DC battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "CUPRA_DC_BATTERY_V", "path": "Battery", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "volts" }, "name": "Traction battery voltage", "suggestedMetric": "tractionBatteryVoltage"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3C"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVBAT_V_CELLS_SUM", "path": "Battery", "fmt": { "len": 32, "max": 524287.99, "min": -524288, "mul": 244140625, "div": 1000000000, "sign": true, "unit": "volts" }, "name": "Battery voltage, sum of all cells"}
+    {"id": "CUPRA_HVBAT_V_CELLS_SUM", "path": "Battery", "fmt": { "len": 32, "max": 524287.99, "min": -524288, "div": 4096, "sign": true, "unit": "volts" }, "name": "Battery voltage, sum of all cells", "suggestedMetric": "tractionBatteryVoltage"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "1E3E"}, "freq": 1,
   "signals": [
