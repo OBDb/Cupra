@@ -1214,7 +1214,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "1001"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_IAT_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Intake air temperature"}
+    {"id": "CUPRA_IAT_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Intake air temperature", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
   "signals": [
@@ -2834,7 +2834,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "149E"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold"}
+    {"id": "CUPRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14A1"}, "freq": 0.25,
   "signals": [
@@ -2880,7 +2880,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14CB"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+    {"id": "CUPRA_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear", "suggestedMetric": "gear"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14CC"}, "freq": 1,
   "signals": [
@@ -2946,7 +2946,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1509"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_AMBIENT_AIR_P", "path": "Engine", "fmt": { "len": 16, "max": 2555.8649, "mul": 39, "div": 1000, "unit": "unknown"    }, "name": "Ambient air pressure"},
-    {"id": "CUPRA_BAROMETRIC_P",  "path": "Engine", "fmt": { "len": 16, "max": 262,                  "div": 250,  "unit": "kilopascal" }, "name": "Barometric pressure"}
+    {"id": "CUPRA_BAROMETRIC_P",  "path": "Engine", "fmt": { "len": 16, "max": 262,                  "div": 250,  "unit": "kilopascal" }, "name": "Barometric pressure",  "suggestedMetric": "barometricPressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1511"}, "freq": 5,
   "signals": [
@@ -3108,9 +3108,9 @@
   "signals": [
     {"id": "CUPRA_EOT_MEAS", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Engine oil temperature measured value", "suggestedMetric": "engineOilTemperature"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1633"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1633"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_LONGITUDINAL_ACCEL", "path": "Movement", "fmt": { "len": 16, "max": 32.767, "min": -32.768, "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration"}
+    {"id": "CUPRA_LONGITUDINAL_ACCEL", "path": "Movement", "fmt": { "len": 16, "max": 32.767, "min": -32.768, "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration", "suggestedMetric": "longitudinalAcceleration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "163B"}, "freq": 1,
   "signals": [
@@ -3122,9 +3122,9 @@
     {"id": "CUPRA_POST_INJ_1_QTY_SPEC",      "path": "Engine", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "unknown" }, "name": "Post injection 1, quantity specified value"},
     {"id": "CUPRA_PQ35_POST_INJ_1_QTY_SPEC", "path": "Engine", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "unknown" }, "name": "Post injection 1: quantity specified value"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1644"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1644"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_LATERAL_ACCEL", "path": "Movement", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Lateral acceleration"}
+    {"id": "CUPRA_LATERAL_ACCEL", "path": "Movement", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Lateral acceleration", "suggestedMetric": "lateralAcceleration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "166B"}, "freq": 1,
   "signals": [
@@ -4848,7 +4848,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F433"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_BARO", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure"}
+    {"id": "CUPRA_BARO", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure", "suggestedMetric": "barometricPressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F43C"}, "freq": 5,
   "signals": [
@@ -5740,7 +5740,7 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "210F"}, "freq": 1,
   "signals": [
     {"id": "CUPRA_MQB_TCM_I_GEAR", "path": "Transmission", "fmt": { "len": 8, "max": 253, "min": -2, "add": -2, "unit": "scalar" }, "name": "Current gear", "suggestedMetric": "gear"},
-    {"id": "CUPRA_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
+    {"id": "CUPRA_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "suggestedMetric": "gearSelector", "fmt": {"len": 8, "map": {
           "1": { "description": "Reverse", "value": "REVERSE" },
           "2": { "description": "Park",    "value": "PARK" },
           "3": { "description": "Drive",   "value": "DRIVE" }
@@ -8084,7 +8084,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "149E"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_V2", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold"}
+    {"id": "CUPRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_V2", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "14B4"}, "freq": 30,
   "signals": [
