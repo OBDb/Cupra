@@ -552,7 +552,7 @@
   "signals": [
     {"id": "CUPRA_CNT_STEER_SUPPORT_ACTIVE",              "path": "Engine",  "fmt": {"bix": 6,  "len": 1,  "max": 1,                     "unit": "offon"        }, "name": "Counter steer support"},
     {"id": "CUPRA_CNT_STEER_SUPPORT_ODO_RDG_OF_LAST_ACT", "path": "Trips",   "fmt": {"bix": 8,  "len": 24, "max": 16777215,              "unit": "kilometers"   }, "name": "Counter steer support, odometer, last activated"},
-    {"id": "CUPRA_CSTEER_ODO_LAST_ACTIVATED",             "path": "Control", "fmt": {"bix": 8,  "len": 24, "max": 1,                     "unit": "kilometers"   }, "name": "Counter steer support, odometer"},
+    {"id": "CUPRA_CSS_ODO_LAST",                          "path": "Control", "fmt": {"bix": 8,  "len": 24, "max": 1,                     "unit": "kilometers"   }, "name": "Directional stability control last activation distance"},
     {"id": "CUPRA_CNT_STEER_SUPPORT_STEERING_TRQ",        "path": "Engine",  "fmt": {"bix": 32, "len": 16, "max": 65.535,   "div": 1000, "unit": "newtonMeters" }, "name": "Counter steer support, steering torque"},
     {"id": "CUPRA_CSTEER_STEERING_TORQUE",                "path": "Control", "fmt": {"bix": 32, "len": 16, "max": 1,        "div": 1000, "unit": "newtonMeters" }, "name": "Counter steer support, steering torque"}
   ]},
@@ -951,16 +951,17 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2609"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_AAT_V2",        "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,               "nullmax": 77.5, "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "CUPRA_AAT",           "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,                                "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "CUPRA_AAT_746",       "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,             "sign": true,                  "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "CUPRA_AAT_FROMCABIN", "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "div": 2,              "sign": true,                  "unit": "celsius" }, "name": "Outside temperature, from cabin"},
-    {"id": "CUPRA_TRON_AAT",      "path": "Climate", "fmt": { "len": 16, "max": 100,    "min": -3276.8, "div": 10,             "sign": true, "nullmax": 100,  "unit": "celsius" }, "name": "Outside temperature"}
+    {"id": "CUPRA_AAT_V2",     "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,               "nullmax": 77.5, "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "CUPRA_AAT",        "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,                                "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "CUPRA_AAT_746",    "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,             "sign": true,                  "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "CUPRA_PQ35_OUT_T", "path": "Engine",  "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "div": 2,              "sign": true,                  "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "CUPRA_TRON_AAT",   "path": "Climate", "fmt": { "len": 16, "max": 100,    "min": -3276.8, "div": 10,             "sign": true, "nullmax": 100,  "unit": "celsius" }, "name": "Outside temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_AAT_CABIN",        "path": "Engine", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
-    {"id": "CUPRA_OUTSIDE_T_SYSTEM", "path": "Engine", "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
+    {"id": "CUPRA_AAT_CABIN",             "path": "Engine", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50,                                              "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
+    {"id": "CUPRA_OUTSIDE_T_SYSTEM",      "path": "Engine", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50,               "nullmin": -50, "nullmax": 77, "unit": "celsius" }, "name": "Outside temperature, system calculated"},
+    {"id": "CUPRA_TRON_OUTSIDE_T_SYSTEM", "path": "Engine", "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2,             "sign": true,                                "unit": "celsius" }, "name": "Outside temperature, system calculated"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "260C"}, "freq": 1,
   "signals": [
@@ -1099,7 +1100,8 @@
   "signals": [
     {"id": "CUPRA_ODO_2_2",      "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,                                                     "unit": "kilometers" }, "name": "Odometer, alternative",              "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_7E0",      "path": "Trips",  "fmt": { "len": 32, "max": 4000000000,                                                     "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_V2",       "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,                              "nullmax": 2147483647, "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_2",        "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,                              "nullmax": 2147483647, "unit": "kilometers" }, "name": "Odometer (alternative)",             "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_V2",       "path": "Trips",  "fmt": { "len": 32, "max": 4000000000,                              "nullmax": 2147483647, "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
     {"id": "CUPRA_ECM_10E0_RAW", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                          "unit": "scalar"     }, "name": "Engine module 10E0, raw"},
     {"id": "CUPRA_10E0_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,      "min": -32768, "sign": true,                        "unit": "scalar"     }, "name": "Engine read 10E0, signed raw count"}
   ]},
@@ -3984,7 +3986,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
   "signals": [
     {"id": "CUPRA_ODO_V3",         "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO_2",          "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO_2_V2",       "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_MILEAGE_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer, mileage"},
     {"id": "CUPRA_ODO_ECM",        "path": "Trips", "fmt": { "len": 24, "max": 1048575,    "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
     {"id": "CUPRA_ODO_7E0_2",      "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"}
@@ -4818,7 +4820,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
+    {"id": "CUPRA_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F41F"}, "freq": 1,
   "signals": [
@@ -5087,8 +5089,9 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "103D"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_ODO_3", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
-    {"id": "CUPRA_ODO",   "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer"}
+    {"id": "CUPRA_ODO_3",     "path": "Trips", "fmt": { "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
+    {"id": "CUPRA_ODO",       "path": "Trips", "fmt": { "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer"},
+    {"id": "CUPRA_ODO_7E1_2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1057"}, "freq": 3600,
   "signals": [
@@ -6274,7 +6277,7 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_VSS_7E1", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "CUPRA_VSS_7E1", "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "F449"}, "freq": 0.25,
   "signals": [
@@ -7159,19 +7162,21 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E33"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVBAT_CELL_V_MAX_V2",   "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
-    {"id": "CUPRA_BMS_CELL_V_MAX",        "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage max, value"},
-    {"id": "CUPRA_E_TRON_BMS_CELL_V_MAX", "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage max, value"},
-    {"id": "CUPRA_BMS_CELL_V_MAX_IDX",    "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage max, index"},
-    {"id": "CUPRA_HVBAT_CELL_V_MAX_NO",   "path": "Battery", "fmt": {"bix": 24, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "HV battery highest cell"}
+    {"id": "CUPRA_HVBAT_CELL_V_MAX_V2",       "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, maximum"},
+    {"id": "CUPRA_BMS_CELL_V_MAX",            "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage max, value"},
+    {"id": "CUPRA_E_TRON_BMS_CELL_V_MAX",     "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage max, value"},
+    {"id": "CUPRA_BMS_CELL_V_MAX_IDX",        "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage max, index"},
+    {"id": "CUPRA_E_TRON_BMS_CELL_V_MAX_IDX", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 65535,                "unit": "scalar" }, "name": "Cell voltage max, index"},
+    {"id": "CUPRA_HVBAT_CELL_V_MAX_NO",       "path": "Battery", "fmt": {"bix": 24, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "HV battery highest cell"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E34"}, "freq": 1,
   "signals": [
-    {"id": "CUPRA_HVBAT_CELL_V_MIN_V2",   "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
-    {"id": "CUPRA_BMS_CELL_V_MIN",        "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage min, value"},
-    {"id": "CUPRA_E_TRON_BMS_CELL_V_MIN", "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage min, value"},
-    {"id": "CUPRA_BMS_CELL_V_MIN_IDX",    "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage min, index"},
-    {"id": "CUPRA_HVBAT_CELL_V_MIN_NO",   "path": "Battery", "fmt": {"bix": 24, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "HV battery lowest cell"}
+    {"id": "CUPRA_HVBAT_CELL_V_MIN_V2",       "path": "Battery", "fmt": {           "len": 16, "max": 15.999, "div": 4096,  "unit": "volts"  }, "name": "HV battery cell voltage, minimum"},
+    {"id": "CUPRA_BMS_CELL_V_MIN",            "path": "Battery", "fmt": {           "len": 16, "max": 6.5535, "div": 10000, "unit": "volts"  }, "name": "Cell voltage min, value"},
+    {"id": "CUPRA_E_TRON_BMS_CELL_V_MIN",     "path": "Battery", "fmt": {           "len": 16, "max": 65.535, "div": 1000,  "unit": "volts"  }, "name": "Cell voltage min, value"},
+    {"id": "CUPRA_BMS_CELL_V_MIN_IDX",        "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage min, index"},
+    {"id": "CUPRA_E_TRON_BMS_CELL_V_MIN_IDX", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 65535,                "unit": "scalar" }, "name": "Cell voltage min, index"},
+    {"id": "CUPRA_HVBAT_CELL_V_MIN_NO",       "path": "Battery", "fmt": {"bix": 24, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "HV battery lowest cell"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E35"}, "freq": 5,
   "signals": [
@@ -7197,10 +7202,10 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3D"}, "freq": 5,
   "signals": [
-    {"id": "CUPRA_HVBAT_I",              "path": "Battery", "fmt": { "len": 32, "max": 4294967295,                                     "unit": "scalar" }, "name": "High-voltage battery current, raw count"},
-    {"id": "CUPRA_HVBAT_I_RAW",          "path": "Battery", "fmt": { "len": 24, "max": 16777215,                                       "unit": "scalar" }, "name": "HV battery current, raw"},
-    {"id": "CUPRA_HVBAT_CURRENT",        "path": "Battery", "fmt": { "len": 16, "max": 200,        "min": -200, "div": 4, "add": -511, "unit": "amps"   }, "name": "HV battery current"},
-    {"id": "CUPRA_E_TRON_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 200,        "min": -200, "div": 4, "add": -511, "unit": "amps"   }, "name": "HV battery current",                      "suggestedMetric": "tractionBatteryCurrent"}
+    {"id": "CUPRA_HVBAT_I",              "path": "Battery", "fmt": { "len": 32, "max": 4294967295,                                         "unit": "scalar" }, "name": "High-voltage battery current, raw count"},
+    {"id": "CUPRA_HVBAT_I_RAW",          "path": "Battery", "fmt": { "len": 24, "max": 16777215,                                           "unit": "scalar" }, "name": "HV battery current, raw"},
+    {"id": "CUPRA_HVBAT_CURRENT",        "path": "Battery", "fmt": { "len": 16, "max": 200,        "min": -200,  "div": 4,   "add": -511,  "unit": "amps"   }, "name": "HV battery current"},
+    {"id": "CUPRA_E_TRON_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 24, "max": 1500,       "min": -1500, "div": 100, "add": -1500, "unit": "amps"   }, "name": "HV battery current",                      "suggestedMetric": "tractionBatteryCurrent"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E40"}, "freq": 30,
   "signals": [
@@ -7719,9 +7724,8 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "51E0"}, "freq": 30,
   "signals": [
-    {"id": "CUPRA_HVBAT_SOH",        "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127,            "add": -1798.574,               "nullmax": 6524, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
-    {"id": "CUPRA_HVBAT_SOH_J12",    "path": "Battery", "fmt": { "len": 16, "max": 100,                                  "div": 10, "add": -1369.5,   "nullmin": 0,                  "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
-    {"id": "CUPRA_E_TRON_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127,            "add": -1798.574,                                "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
+    {"id": "CUPRA_HVBAT_SOH",     "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127,            "add": -1798.574,               "nullmax": 6524, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
+    {"id": "CUPRA_HVBAT_SOH_J12", "path": "Battery", "fmt": { "len": 16, "max": 100,                                  "div": 10, "add": -1369.5,   "nullmin": 0,                  "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "7425"}, "freq": 5,
   "signals": [
@@ -9014,8 +9018,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
-    {"id": "CUPRA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255,                 "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"},
-    {"id": "CUPRA_VSS",    "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "CUPRA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "FC00", "rax": "FE00B9", "pri": "17", "tst": "B9", "dbg": true, "cmd": {"22": "465B"}, "freq": 1,
   "signals": [
